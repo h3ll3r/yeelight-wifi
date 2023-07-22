@@ -161,6 +161,56 @@ export default class Yeelight extends EventEmitter {
   }
 
   /**
+   * returns The POWER provided by the Yeelight
+   * @returns {string} power string 'on' or 'off'
+   */
+  getPower() {
+    return this.power;
+  }
+
+  /**
+   * returns The BRIGHT provided by the Yeelight
+   * @returns {string} brightness as percentage of maximum brightness in range 1 - 100
+   */
+  getBright() {
+    return this.bright;
+  }
+
+  /**
+   * returns The COLOR_MODE provided by the Yeelight
+   * @returns {string} light mode. 1 means color mode, 2 means color temperature mode, 3 means HSV
+   * mode
+   */
+  getColorMode() {
+    return this.colorMode;
+  }
+
+  /**
+   * returns The RGB provided by the Yeelight
+   * @returns {string} RGB value, only valid if COLOR_MODE is 1
+   */
+  getRGB() {
+      return this.rgb;
+  }
+
+  /**
+   * returns The CT provided by the Yeelight
+   * @returns {string} color temperature. The range of this value depends on product model, refer
+   * to Yeelight product description, only valid if COLOR_MODE is 2
+   */
+  getCT() {
+    return this.ct;
+  }
+
+  /**
+   * returns The HUE provided by the Yeelight
+   * @returns {string} hue value in range 0 - 359, only valid if COLOR_MODE is 3
+   */
+  getHUE() {
+    return this.hue;
+  }
+
+  /**
    * Sets the name on the Yeelight
    * @param {string} name
    * @returns {Promise} will be invoked after successfull or failed send
