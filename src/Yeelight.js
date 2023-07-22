@@ -35,6 +35,13 @@ export default class Yeelight extends EventEmitter {
     this.id = data.ID;
     this.name = data.NAME;
     this.model = data.MODEL;
+    this.power = data.POWER;
+    this.bright = data.BRIGHT;
+    this.colorMode = data.COLOR_MODE;
+    this.ct = data.CT,
+    this.rgb = data.RGB,
+    this.hue = data.HUE,
+    this.sat = data.SAT,
     this.port = parsedUri.port;
     this.hostname = parsedUri.hostname;
     this.supports = data.SUPPORT.split(' ');
