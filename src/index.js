@@ -30,12 +30,9 @@ class YeelightSearch extends EventEmitter {
    * adds a new light to the lights array
    */
   addLight(lightdata) {
-    let yeelight = this.yeelights.find(item => item.getId() === lightdata.ID);
-    if (!yeelight) {
-      yeelight = new Yeelight(lightdata);
-      this.yeelights.push(yeelight);
-      this.emit('found', yeelight);
-    }
+    const yeelight = new Yeelight(lightdata);
+    this.yeelights.push(yeelight);
+    this.emit('found', yeelight);
   }
 
   /**
